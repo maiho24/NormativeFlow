@@ -1,0 +1,21 @@
+# configs/direct_config.yaml
+model:
+  hidden_dim: "128_64_128"                 # Architecture for hidden layers of the coupling networks
+  covariate_net_dim: "32_64_128"           # Architecture for covariate networks used in each coupling layer
+  n_layers: 6                              # Number of coupling layers
+  learning_rate: 0.001                     # Control how large of a step to take when updating weights during gradient descent
+  weight_decay: 0.00001                    # Control the complexity of the model (Optional, Default: 1e-5)
+  use_transformation_layer: True           # Enable or disable transformation layer (Optional, Default: False)
+  conditional_transform: True              # Make transformation depend on covariates (Optional, Default: False)
+  transform_hidden_dims: "64_128"          # Architecture for hidden layers of the covariate-conditioned transformation networks (Optional)
+
+training:
+  epochs: 300
+  batch_size: 64
+  early_stopping_patience: 25
+  validation_split: 0.2
+  extract_transform_params: True           # Extract the transformation layer's parameters
+
+paths:
+  data_dir: "/path/to/data/"
+  output_dir: "/path/to/output/"

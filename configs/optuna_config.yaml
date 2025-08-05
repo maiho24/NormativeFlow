@@ -1,0 +1,46 @@
+# configs/optuna_config.yaml
+training:
+  epochs: 200
+  early_stopping_patience: 20
+  validation_split: 0.2
+
+optuna:
+  study_name: "realnvp_optimisation"
+  n_trials: 100
+  n_jobs: 8                                     # Run n_jobs in parallel
+  use_transformation_layer: True                # Enable or disable transformation layer
+  search_space:
+    hidden_dim:
+      type: "categorical"
+      choices: [
+        "256_128_256",
+        "128_64_129",
+      ]
+    covariate_net_dim:
+      type: "categorical"
+      choices: [
+        "32_64_128",
+        "16_32",
+      ]    
+    n_layers:
+      type: "int"
+      min: 4
+      max: 10
+    learning_rate:                              # Control how large of a step to take when updating weights during gradient descent
+      type: "loguniform"
+      min: 1e-4
+      max: 1e-2
+    weight_decay:                               # Regularisation technique that adds a penalty proportional to weight magnitude to the loss function
+      type: "loguniform"
+      min: 1e-3
+      max: 1e-6    
+    batch_size:
+      type: "categorical"
+      choices: [32, 64, 128]
+    conditional_transform:
+            choices: [True, False]              # Try both conditional and non-conditional transforms
+    transform_hidden_dims:
+        choices: ["64_128", "64_128_256"]       # Architecture for the hidden layers of the covariate networks used for the transformation layer
+paths:
+  data_dir: "/path/to/data/"
+  output_dir: "/path/to/output/"

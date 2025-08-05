@@ -1,0 +1,3 @@
+[console_scripts]
+brain-nvp-inference = scripts.run_inference:main
+brain-nvp-train = scripts.train_model:main
