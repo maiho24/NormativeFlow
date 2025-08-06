@@ -1,10 +1,10 @@
-# BrainNormativeRealNVP
+# NormativeFlow
 
 A Python package for normative modeling of brain imaging data using conditional RealNVP ([Dinh et al., 2017](https://openreview.net/forum?id=HkpbnH9lx)).
 
 ## Overview
 
-BrainNormativeRealNVP is a comprehensive toolkit for building and applying normative models to neuroimaging data. It implements a conditional RealNVP approach that can:
+NormativeFlow is a comprehensive toolkit for building and applying normative models to neuroimaging data. It implements a conditional RealNVP approach that can:
 - Learn normative patterns from brain imaging data conditioned on demographic and clinical variables
 - Perform robust statistical inference using multiple scoring methods
 - Quantify abnormality through multiple complementary approaches:
@@ -269,16 +269,3 @@ output_dir/
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Attribution
-
-If you use this package, please cite:
-
-```bibtex
-@software{Ho_BrainNormativeRealNVP,
-  author = {Ho M., Song Y., Sachdev P., Fan L., Jiang J., Wen W.},
-  title = {Normative Modeling of High-Dimensional Neuroimaging Data Through Conditional Normalizing Flows},
-  year = {2025},
-  url = {https://github.com/maiho24/BrainNormativeRealNVP}
-}
-```
