@@ -30,8 +30,8 @@ conda activate brain_nvp
 
 2. Clone and install the package:
 ```bash
-git clone https://github.com/maiho24/BrainNormativeRealNVP.git
-cd BrainNormativeRealNVP
+git clone https://github.com/maiho24/NormativeFlow.git
+cd NormativeFlow
 pip install -e .
 ```
 
